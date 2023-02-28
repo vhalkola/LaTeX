@@ -1,0 +1,140 @@
+\documentclass[a4paper,finnish]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{fancyhdr}
+\usepackage{epsfig}
+\usepackage{eurosym} % esim. 5 euroa = 5 \euro{}
+
+\newsavebox{\nimi}
+\newsavebox{\osoite}
+\newsavebox{\puhelin}
+\newsavebox{\postinro}
+\newsavebox{\tilinro}
+
+\newsavebox{\sijainti}
+\newsavebox{\osallistujamaara}
+\newsavebox{\puhis}
+\newsavebox{\sihteeri}
+\newsavebox{\tark}
+\newsavebox{\tokatark}
+\newsavebox{\varaA}
+\newsavebox{\varaB}
+\newsavebox{\alkamisaika}
+\newsavebox{\loppumisaika}
+
+\sbox{\nimi}{Akateeminen sitsiseura ASS}
+\sbox{\osoite}{PL 69}
+\sbox{\postinro}{02151 Espoo}
+\sbox{\tilinro}{130930-209098}
+
+\sbox{\sijainti}{\parbox{3cm}{paikka\\aika}}
+\sbox{\osallistujamaara}{x}
+\sbox{\puhis}{}
+\sbox{\sihteeri}{}
+\sbox{\tark}{}
+\sbox{\tokatark}{}
+\sbox{\varaA}{}
+\sbox{\varaB}{}
+\sbox{\alkamisaika}{}
+\sbox{\loppumisaika}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{35pt}
+
+\rhead{{\epsfxsize=1cm \epsfbox{ass_logo_rgb.eps}}}
+\lhead{\usebox{\nimi}}
+  
+%\lfoot{
+%  \begin{tabular}{lll}
+%    \usebox{\nimi} & \hspace*{1cm} &  \\
+%    \usebox{\osoite} & &   \\
+%    \usebox{\postinro} & & pankkiyhteys: \usebox{\tilinro} 
+%  \end{tabular}
+%}
+
+\renewcommand{\headrulewidth}{.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1 ex plus 0.5 ex minus 0.2ex}
+
+\begin{document}
+
+{\Large \bf Vxxxikokous 20xx}\hfill\usebox{\sijainti}
+
+\vspace*{0.7cm}
+
+Läsnä oli \usebox{\osallistujamaara} yhdistyksen jäsentä. (liite 1)
+
+\section{Kokouksen avaaminen}
+\usebox{\puhis} avasi kokouksen kello \usebox{\alkamisaika}.
+
+\section{Kokouksen sihteerin ja puheenjohtajan valinta}
+
+Kokouksen puheenjohtajaksi valittiin \usebox{\puhis} ja sihteeriksi
+\usebox{\sihteeri}. 
+
+\section{Pöytäkirjantarkastajien valinta}
+
+Pöytäkirjantarkastajiksi valittiin \usebox{\tark} (varalla \usebox{\varaA}) ja
+\usebox{\tokatark} (varalla \usebox{\varaB}).
+
+\section{Ääntenlaskijoiden valinta}
+
+Valittiin pöytäkirjantarkastajat toimimaan tarvittaessa ääntenlaskijoina.
+
+\section{Kokouksen laillisuus ja päätösvaltaisuus}
+
+Puheenjohtaja totesi kokouksen päätösvaltaiseksi ja laillisesti
+koollekutsutuksi.
+
+\section{Kokouksen työjärjestyksen hyväksyminen}
+
+Esityslista hyväksyttiin työjärjestykseksi. (liite 2) 
+
+\section{}
+
+Tähän foo ja bar sen mukaan, oliko vuosi- vai vaalikokous.
+
+\section{Muut esille tulevat asiat}
+
+Tähän baz.
+
+\section{Kokouksen päättäminen}
+Puheenjohtaja päätti kokouksen kello \usebox{\loppumisaika}.
+
+\vspace*{1cm}
+
+\begin{minipage}{\textwidth}
+Vakuudeksi
+
+\vspace*{1.5cm}
+
+\begin{tabbing}
+\hspace*{1.5cm}\=kokouksen puheenjohtaja \= \hspace{1cm} \= kokouksen
+sihteeri\kill
+\> \usebox{\puhis} \> \> \usebox{\sihteeri}\\
+\> kokouksen puheenjohtaja \> \> kokouksen sihteeri
+\end{tabbing}
+
+Olemme tarkastaneet pöytäkirjan ja vakuutamme, että se vastaa
+kokouksen kulkua:\\
+
+\vspace*{1.5cm}
+
+\begin{tabbing}
+\hspace*{1.5cm}\=kokouksen puheenjohtaja \= \hspace{1cm} \= kokouksen
+sihteeri\kill
+\> \usebox{\tark} \> \> \usebox{\tokatark}\\
+\end{tabbing}
+\end{minipage}
+
+\section*{Liitteet}
+\begin{enumerate}
+\item Läsnäololista
+\item Esityslista
+\end{enumerate}
+
+\end{document}
