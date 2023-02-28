@@ -1,0 +1,277 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[pdftex]{graphicx}
+
+\setlength{\textheight}{275mm}
+\setlength{\textwidth}{170mm}
+\setlength{\topmargin}{0mm}
+\setlength{\parskip}{.7ex plus .3ex minus .1ex}
+
+\advance \topmargin by -2.75cm
+\oddsidemargin -1.7cm
+\evensidemargin \oddsidemargin
+
+\usepackage[T1]{fontenc}
+\usepackage{chancery}
+\usepackage{aurical}
+
+\usepackage[utf8]{inputenc}
+
+\newbox\tstbox
+\newcommand{\ifnonempty}[3]{%
+  \setbox\tstbox\hbox{#1}%
+  \ifnum \number\wd\tstbox > 0%
+  #2 \else #3 \fi%
+}
+\usepackage{ifthen}
+
+\newcounter{songno}
+\newcounter{verseno}[songno]
+\newbox\numbox
+\newenvironment{chorus}{\begin{quote}}{\end{quote}}
+\newenvironment{song}[2]{%
+  \stepcounter{songno}%
+  %% Typeset the name of the song:
+  \setbox\numbox\hbox{\textbf{\arabic{songno}.\ }}%
+  \hbox{\box\numbox\textbf{#1}}%  
+  %% Typeset the original name of the song:
+  \ifnonempty{#2}{\hbox{\hbox to \wd\numbox{ }\textit{#2}}\vspace{1.5ex plus .5ex minus .5ex}}{\vspace{1.5ex plus .5ex minus .5ex}}%
+  \par\begin{myverse}}%
+  {\end{myverse}\vspace{1.5ex plus .5ex minus .5ex}}
+
+\newenvironment{song*}[3]{%
+  \stepcounter{songno}%
+  %% Typeset the name of the song:
+  \setbox\numbox\hbox{\textbf{\large #3.\ }}%
+  \hbox{\box\numbox\textbf{\large #1}}%  
+  %% Typeset the original name of the song:
+  \ifnonempty{#2}{\hbox{\textit{#2}}\vspace{1.5ex plus .5ex minus .5ex}}{\vspace{1.5ex plus .5ex minus .5ex}}%
+  \par\begin{myverse}}%
+  {\end{myverse}\vspace{1.5ex plus .5ex minus .5ex}}
+
+\makeatletter
+\newenvironment{myverse}
+               {\let\\\@centercr
+                \list{}{\itemsep      \z@
+                        \topsep       0pt
+                        \itemindent   -1.5em
+                        \listparindent\itemindent
+                        \leftmargin   1.5em
+                        \parsep       1.1ex
+                        \rightmargin  0pt}%
+                \settowidth{\kertlength}{:,: }%
+                \item\relax}
+               {\endlist}
+\newlength{\kertlength}
+
+\newcommand{\nverse}[1]{\stepcounter{verseno}%
+  \setbox\numbox\hbox{\arabic{verseno}.\ }%
+  \par\hspace{\wd\numbox}\parbox\textwidth{\hskip-\wd\numbox\arabic{verseno}.\
+    #1}\vspace{1ex}}
+\newcommand{\mnverse}[2]{\stepcounter{verseno}%
+  \setbox\numbox\hbox{\arabic{verseno}#1.\ }%
+  \par\hspace{\wd\numbox}\parbox\textwidth{\hskip-\wd\numbox\arabic{verseno}#1.\ #2}\vspace{1ex}}
+
+\newcommand{\uverse}[1]{\setbox\numbox\hbox{\arabic{verseno}.\ }%
+  \par\hspace{\wd\numbox}\parbox\textwidth{#1}\vspace{1ex}}
+\newcommand{\srepeat}[1]{\vskip-\baselineskip\vskip\medskipamount\par\parbox\textwidth{\hskip-1.1em :,:\ #1\ :,:}}
+
+\makeatother
+
+\usepackage{multicol}
+ \setlength{\columnsep}{3.6cm}
+
+\pagestyle{empty}
+
+\newdimen\colwidth
+\colwidth = 0.45\textwidth
+\newdimen\colheight
+\colheight= 0.98\textheight
+
+\newcommand{\titlefont}[1]{#1}
+
+\renewcommand{\title}[1]{\begin{center}{\Huge \titlefont{#1}}\end{center}}
+
+\newcommand{\boxify}[1]{\fbox{\fbox{\hspace{5mm}\hbox to \colwidth{%
+      \vbox to \colheight{#1}}}}}
+
+\newcommand{\boxifyh}[2]{\fbox{\fbox{\hspace{5mm}\hbox to \colwidth{%
+      \vbox to #2{#1}}}}}
+
+
+\newbox\pagea
+\newbox\pageb
+\newbox\pagec
+\newbox\paged
+%\newbox\pagee
+%\newbox\pagef
+%\newbox\pageg
+%\newbox\pageh
+%\newbox\pagei
+%\newbox\pagej
+%\newbox\pagek
+%\newbox\pagel
+
+% Asettaminen ennen \boxify
+% \setbox\pagea\hbox{
+% \setbox\pageb\hbox{
+
+% Kutsuminen
+% \box\pageb
+% \box\pagea
+
+% Pagebreak
+% \vfill
+% }
+% \boxify{
+
+\begin{document}
+
+  \small
+  \begin{multicols}{2}
+
+    \setbox\pagea\hbox{
+      \boxify{
+        \begin{center}
+          \vspace{9.5cm}
+          \includegraphics[width=7cm]{polkudiudiu4}
+          \vspace{1cm}
+          \title{XXVIII vuosijuhla}
+          \hrule
+          \vspace{0.35cm}
+          \large Otakaari 20\\30.3.2019
+        \end{center}
+        \vspace{5mm}
+        \vfill
+      }
+    }
+
+    \setbox\pageb\hbox{
+      \boxify{
+        \vspace{23mm}
+
+        \begin{center}
+          {\huge Menu}
+          \vspace*{1cm}
+
+          {\Fontlukas\bfseries\large Alkuruoka:}
+
+          Kampasimpukoita IPA-paprikakastikkeessa\\
+          \vspace*{.5cm}
+          {\Fontlukas\bfseries\large Pääruoka:}
+
+          Oluessa haudutettua porsaan kylkeä\\
+          salamia ja kasviksia\\
+          \vspace*{.5cm}
+          {\Fontlukas\bfseries\large Jälkiruoka:}
+
+          Suklaa-stout-mokkapalat\\
+
+          \vspace*{1cm}
+          \includegraphics[width=2cm]{erotin.png}
+          \vspace*{1cm}
+
+          {\Fontlukas\bfseries\large Juomat:}
+
+          Tonnin seteli\\
+          \emph{POLKUh 2018}
+
+          * * * 
+
+          Ipano IPA\\
+          \emph{Miikka Viitala}
+
+          * * *
+
+          Siansaksaa\\
+          \emph{Jalmari Liminka}
+
+          * * *
+
+          Admiral Hawke London Porter\\
+          \emph{Ville Halkola}
+
+          * * *
+
+          Laskiaistiistain kuolemanvoltti\\
+          \emph{Ville Halkola}
+        \end{center}
+        \vfill
+      }
+    }
+    
+    \setbox\pagec\hbox{
+      \boxify{
+        \vspace{7cm}
+        \begin{center}
+          {\Fontlukas\bfseries\large Tervetuliaissanat}\\
+          \emph{\large Paavo Lehtelä}
+
+          \vspace*{.5cm}
+          * * * 
+          \vspace*{.5cm}
+
+          {\Fontlukas\bfseries\large Olutmestarin vaihto}\\
+          \emph{\large Ville Halkola \& Paavo Lehtelä}
+
+          \vspace*{.5cm}
+          * * * 
+          \vspace*{.5cm}
+
+          {\Fontlukas\bfseries\large Puheenjohtajan tervehdys}\\
+          \emph{\large Miikka Viitala}
+
+          \vspace*{.5cm}
+          * * * 
+          \vspace*{.5cm}
+
+          {\Fontlukas\bfseries\large Puhe oluelle}\\
+          \emph{\large Olli-Pekka Osmala}
+
+          \vspace*{.5cm}
+          * * * 
+          \vspace*{.5cm}
+
+          {\Fontlukas\bfseries\large Jatkot ja sauna}
+        \end{center}
+        \vfill
+      }
+    }
+    
+    
+    \setbox\paged\hbox{
+      \boxify{
+        \vspace{12cm}
+        \begin{center}
+          \large Wanhat tanssit peruttu nöyryytyksen välttämiseksi. 
+        \end{center}
+        \vfill
+      }
+    }
+    
+
+    %% Lopullinen taitto on tässä
+
+    \box\paged  % \hspace{-5mm}  % Mahdollinen korjaus
+    \box\pagea
+
+    \box\pageb
+    \box\pagec
+
+%    \box\pagej
+%    \box\pagec
+
+%    \box\paged
+%    \box\pagei
+    
+%    \box\pageh
+%    \box\pagee
+    
+%    \box\pagef
+%    \box\pageg
+
+
+
+  \end{multicols}
+
+\end{document}
