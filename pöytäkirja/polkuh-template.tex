@@ -1,0 +1,157 @@
+\documentclass[a4paper,finnish]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{fancyhdr}
+\usepackage[pdftex]{graphicx}
+\usepackage{eurosym} % esim. 5 euroa = 5 \euro{}
+
+\newcounter{punkt}
+
+\newcommand{\punkt}[1]{
+\stepcounter{punkt}
+%\addcontentsline{toc}{subsection}{\arabic{punkt}. {#1}}
+\vspace*{1em} %
+{\bf \arabic{punkt}. {#1}}
+\nopagebreak
+}
+
+\newsavebox{\nimi}
+\newsavebox{\osoite}
+\newsavebox{\puhelin}
+\newsavebox{\postinro}
+\newsavebox{\tilinro}
+
+\newsavebox{\sijainti}
+\newsavebox{\osallistujamaara}
+\newsavebox{\puhis}
+\newsavebox{\sihteeri}
+\newsavebox{\tark}
+\newsavebox{\tokatark}
+\newsavebox{\varaA}
+\newsavebox{\varaB}
+\newsavebox{\alkamisaika}
+\newsavebox{\loppumisaika}
+
+\sbox{\nimi}{Polyteknikkojen olutkulttuurin edistämisyhdistys ry}
+\sbox{\osoite}{PL 69}
+\sbox{\postinro}{02151 Espoo}
+\sbox{\tilinro}{}
+
+\sbox{\sijainti}{\parbox{3cm}{Panola\\13.1.2014 klo 18}}
+%\sbox{\osallistujamaara}{7}
+\sbox{\puhis}{Jussi Nurminen}
+\sbox{\sihteeri}{Ville Halkola}
+\sbox{\tark}{Paavo Lehtelä}
+\sbox{\tokatark}{Juha Västi}
+%\sbox{\varaA}{Jussi Nurminen}
+%\sbox{\varaB}{Juha Manninen}
+\sbox{\alkamisaika}{18.45}
+\sbox{\loppumisaika}{20.25}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{35pt}
+
+\rhead{\includegraphics[height=1.5cm]{polkudiudiu4.pdf}}
+\lhead{\usebox{\nimi}}
+  
+%\lfoot{
+%  \begin{tabular}{lll}
+%    \usebox{\nimi} & \hspace*{1cm} &  \\
+%    \usebox{\osoite} & &   \\
+%    \usebox{\postinro} & & pankkiyhteys: \usebox{\tilinro} 
+%  \end{tabular}
+%}
+
+\renewcommand{\headrulewidth}{.5pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1 ex plus 0.5 ex minus 0.2ex}
+
+\begin{document}
+
+{\Large \bf Hallituksen kokous x/2014}\hfill\usebox{\sijainti}
+
+\vspace*{0.7cm}
+
+
+
+\begin{tabular}{lll}
+Läsnä olivat: & Jussi Nurminen & puheenjohtaja\\
+& Ville Halkola & sihteeri\\
+& Toni Kangas & taloudenhoitaja\\
+& Paavo Lehtelä & tapahtumavastaava\\
+& Juha Manninen & kerhotilavastaava\\
+& Lassi Karvonen & excursiovastaava\\
+& Mikko Pesari & härppä\\
+& Juha Västi & olutmestari
+\end{tabular}
+
+\punkt{Kokouksen avaaminen}
+
+Puheenjohtaja avasi kokouksen kello \usebox{\alkamisaika}.
+
+\punkt{Kokouksen järjestäytyminen}
+
+Puheenjohtaja totesi kokouksen sääntöjen mukaan koolle kutsutuksi ja
+päätösvaltaiseksi.
+
+Pöytäkirjantarkastajiksi valittiin \usebox{\tark} ja
+\usebox{\tokatark}. 
+
+\punkt{Kokouksen työjärjestys}
+
+Esityslista hyväksyttiin työjärjestykseksi (liite 1).
+
+\punkt{Ilmoitusasiat}
+
+\punkt{Tapahtumat}
+
+\punkt{Raha- ja paperiasiat}
+
+\punkt{Kerhotila-asiat}
+
+\punkt{Jäsenasiat}
+
+\punkt{Muut esille tulevat asiat}
+
+\punkt{Seuraava kokous}
+
+\punkt{Kokouksen päättäminen}
+
+Puheenjohtaja päätti kokouksen kello \usebox{\loppumisaika}.
+
+\vspace*{1cm}
+
+\begin{minipage}{\textwidth}
+Pöytäkirjan vakuudeksi:
+
+\vspace*{1.5cm}
+
+\begin{tabbing}
+\hspace*{1.5cm}\=kokouksen puheenjohtaja \= \hspace{1cm} \= kokouksen
+sihteeri\kill
+\> \usebox{\puhis} \> \> \usebox{\sihteeri}\\
+\> kokouksen puheenjohtaja \> \> kokouksen sihteeri
+\end{tabbing}
+
+Olemme tarkastaneet pöytäkirjan ja vakuutamme sen vastaavan kokouksen kulkua:\\
+
+\vspace*{1.5cm}
+
+\begin{tabbing}
+\hspace*{1.5cm}\=kokouksen puheenjohtaja \= \hspace{1cm} \= kokouksen
+sihteeri\kill
+\> \usebox{\tark} \> \> \usebox{\tokatark}\\
+\> pöytäkirjantarkastaja \> \> pöytäkirjantarkastaja
+\end{tabbing}
+\end{minipage}
+
+\section*{Liitteet}
+\begin{enumerate}
+\item Esityslista
+\end{enumerate}
+
+\end{document}
