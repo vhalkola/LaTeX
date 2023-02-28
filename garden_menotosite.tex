@@ -1,0 +1,251 @@
+\documentclass[a4paper,12pt,finnish]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{mathptmx}
+\usepackage[scaled=.92]{helvet}
+\usepackage{courier}
+\usepackage[pdftex,left=25mm,top=25mm,bottom=10mm,right=10mm]{geometry}
+\renewcommand*{\familydefault}{phv}
+\usepackage{fancyhdr}
+\setlength{\headheight}{1cm}
+\lhead{\includegraphics[height=1cm]{garden.pdf} Otaniemen kaupunkiviljely-yhdistys ry}\chead{}\rhead{MENOTOSITE}
+\lfoot{}\cfoot{}\rfoot{}
+\pagestyle{fancy}
+\usepackage{color}
+\usepackage[pdftex,pdfpagelayout=SinglePage,pdftitle={Menotosite},pdfsubject={Talousasiat},pdfauthor={Ville Halkola},pdfpagemode=UseNone,pdfstartview=FitH,pdfhighlight={/N}]{hyperref}
+\setlength{\parindent}{0pt}
+\usepackage[pdftex]{insdljs}
+\immediate\pdfobj {
+<<
+  /WP << /S /JavaScript /JS (willPrint();) >>
+  /DP << /S /JavaScript /JS (didPrint();) >>
+>>
+}
+\pdfcatalog{/AA \the\pdflastobj\space 0 R}
+\begin{insDLJS}[tosite]{tosite}{JavaScript}
+  var done = 0;
+  var selite = ["s1", "s2", "s3", "s4", "s5"];
+  var hinta = ["h1", "h2", "h3", "h4", "h5"];
+  var i;
+
+  function coloursPrinting() {
+    this.getField("nimi").fillColor = color.white;
+    this.getField("email").fillColor = color.white;
+    this.getField("puhelin").fillColor = color.white;
+    this.getField("tilinro").fillColor = color.white;
+    this.getField("s1").fillColor = color.white;
+    this.getField("s2").fillColor = color.white;
+    this.getField("s3").fillColor = color.white;
+    this.getField("s4").fillColor = color.white;
+    this.getField("s5").fillColor = color.white;
+    this.getField("h1").fillColor = color.white;
+    this.getField("h2").fillColor = color.white;
+    this.getField("h3").fillColor = color.white;
+    this.getField("h4").fillColor = color.white;
+    this.getField("h5").fillColor = color.white;
+
+    this.getField("nimi").strokeColor = color.white;
+    this.getField("email").strokeColor = color.white;
+    this.getField("puhelin").strokeColor = color.white;
+    this.getField("tilinro").strokeColor = color.white;
+    this.getField("s1").strokeColor = color.white;
+    this.getField("s2").strokeColor = color.white;
+    this.getField("s3").strokeColor = color.white;
+    this.getField("s4").strokeColor = color.white;
+    this.getField("s5").strokeColor = color.white;
+    this.getField("h1").strokeColor = color.white;
+    this.getField("h2").strokeColor = color.white;
+    this.getField("h3").strokeColor = color.white;
+    this.getField("h4").strokeColor = color.white;
+    this.getField("h5").strokeColor = color.white;
+   
+    this.getField("nimi").textFont = font.Helv;
+    this.getField("email").textFont = font.Helv;
+    this.getField("puhelin").textFont = font.Helv;
+    this.getField("tilinro").textFont = font.Helv;
+    this.getField("s1").textFont = font.Helv;
+    this.getField("s2").textFont = font.Helv;
+    this.getField("s3").textFont = font.Helv;
+    this.getField("s4").textFont = font.Helv;
+    this.getField("s5").textFont = font.Helv;
+    this.getField("h1").textFont = font.Helv;
+    this.getField("h2").textFont = font.Helv;
+    this.getField("h3").textFont = font.Helv;
+    this.getField("h4").textFont = font.Helv;
+    this.getField("h5").textFont = font.Helv;
+  }
+
+  function coloursScreen() {
+    var newcolour = ["RGB", 0.65, 0.79, 0.94];
+    this.getField("nimi").fillColor = newcolour;
+    this.getField("email").fillColor = newcolour;
+    this.getField("puhelin").fillColor = newcolour;
+    this.getField("tilinro").fillColor = newcolour;
+    this.getField("s1").fillColor = newcolour;
+    this.getField("s2").fillColor = newcolour;
+    this.getField("s3").fillColor = newcolour;
+    this.getField("s4").fillColor = newcolour;
+    this.getField("s5").fillColor = newcolour;
+
+    this.getField("nimi").strokeColor = newcolour;
+    this.getField("email").strokeColor = newcolour;
+    this.getField("puhelin").strokeColor = newcolour;
+    this.getField("tilinro").strokeColor = newcolour;
+    this.getField("s1").strokeColor = newcolour;
+    this.getField("s2").strokeColor = newcolour;
+    this.getField("s3").strokeColor = newcolour;
+    this.getField("s4").strokeColor = newcolour;
+    this.getField("s5").strokeColor = newcolour;
+    
+    this.getField("nimi").textFont = font.HelvB;
+    this.getField("email").textFont = font.HelvB;
+    this.getField("puhelin").textFont = font.HelvB;
+    this.getField("tilinro").textFont = font.HelvB;
+    this.getField("s1").textFont = font.HelvB;
+    this.getField("h1").textFont = font.HelvB;
+    this.getField("s2").textFont = font.HelvB;
+    this.getField("h2").textFont = font.HelvB;
+    this.getField("s3").textFont = font.HelvB;
+    this.getField("h3").textFont = font.HelvB;
+    this.getField("s4").textFont = font.HelvB;
+    this.getField("h4").textFont = font.HelvB;
+    this.getField("s5").textFont = font.HelvB;
+    this.getField("h5").textFont = font.HelvB;
+  }
+
+  function willPrint() {
+    this.delay = true;
+    coloursPrinting();
+    totalSum();
+//    this.getButton("laske").display = display.hidden;
+    this.delay = false;
+  }
+
+  function didPrint() {
+    this.delay = true;
+    coloursScreen();
+    this.delay = false;
+  }
+  
+  function docOpen() {
+    if(!done) {
+      done = 1;
+      this.delay = true;
+      coloursScreen();
+      this.getField("nimi").editable = true;
+      this.getField("puhelin").editable = true;
+      this.getField("email").editable = true;
+      this.getField("tilinro").editable = true;
+      this.getField("s1").editable = true;
+      this.getField("h1").editable = true;
+      this.getField("s2").editable = true;
+      this.getField("h2").editable = true;
+      this.getField("s3").editable = true;
+      this.getField("h3").editable = true;
+      this.getField("s4").editable = true;
+      this.getField("h4").editable = true;
+      this.getField("s5").editable = true;
+      this.getField("h5").editable = true;
+
+      this.getField("nimi").setFocus();
+
+      this.delay = false;
+    }
+  }
+
+  function totalSum() {
+    var summa = 0.0;
+    summa = summa + this.getField("h1").value;
+    summa = summa + this.getField("h2").value;
+    summa = summa + this.getField("h3").value;
+    summa = summa + this.getField("h4").value;
+    summa = summa + this.getField("h5").value;
+    var mutsis = Math.round(100.0 * summa);
+    mutsis = 0.01 * mutsis;
+    mutsis = mutsis.toFixed(2);
+    mutsis = mutsis.toString();
+    this.getField("total").value = mutsis;
+    var d = new Date();
+    this.getField("idag").value = util.printd("d.m.yyyy",d);
+  }
+
+\end{insDLJS}
+
+\OpenAction{/S /JavaScript /JS (docOpen();)}
+\newcommand{\textforlabel}[2]{\TextField[name={#1},value={#2},width=9em,align=2,bordercolor={1 1 1}]{}}
+
+\begin{document}
+
+\section*{Menotosite}
+\vspace*{.5cm}
+
+\begin{Form}
+\begin{tabular}{|lc|l|}
+\hline
+Maksun saaja & \phantom{a} & \phantom{\rule{0pt}{1.3em}}\raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=nimi,width=20em,bordercolor=1 1 1]{}}\\
+\hline
+S\"{a}hk\"{o}posti & & \phantom{\rule{0pt}{1.3em}}\raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=email,width=20em,bordercolor=1 1 1]{}}\\
+\hline
+Puhelin & & \phantom{\rule{0pt}{1.3em}}\raisebox{-.45ex}{\rule{0pt}{1em}\TextField[name=puhelin,width=20em,bordercolor=1 1 1]{}}\\
+\hline
+Tilinumero (IBAN) & & \phantom{\rule{0pt}{1.3em}}\raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=tili,width=20em,bordercolor=1 1 1]{}}\\
+\hline
+\end{tabular}
+
+\vspace*{1cm}
+
+\begin{center}
+
+\begin{tabular}{|c|l|r|}
+\hline
+\textbf{Kuitti nro} & \textbf{Selite} & \textbf{Summa} \phantom{(\texteuro)} \\
+\hline
+1 & \phantom{\rule{0pt}{1.3em}}\raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=s1,width=20em,bordercolor=1 1 1]{}} & \raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=h1,width=5em,align=2,bordercolor=1 1 1]{}}~\texteuro\\
+\hline
+2 & \phantom{\rule{0pt}{1.3em}}\raisebox{-.5ex}{\rule{0pt}{1em}\TextField[name=s2,width=20em,bordercolor=1 1 1]{}} & \raisebox{-.5ex}{\rule{0pt}{1em}\TextField[name=h2,width=5em,align=2,bordercolor=1 1 1]{}}~\texteuro\\
+\hline
+3 & \phantom{\rule{0pt}{1.3em}}\raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=s3,width=20em,bordercolor=1 1 1]{}} & \raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=h3,width=5em,align=2,bordercolor=1 1 1]{}}~\texteuro\\
+\hline
+4 & \phantom{\rule{0pt}{1.3em}}\raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=s4,width=20em,bordercolor=1 1 1]{}} & \raisebox{-.39ex}{\rule{0pt}{1em}\TextField[name=h4,width=5em,align=2,bordercolor=1 1 1]{}}~\texteuro\\
+\hline
+5 & \phantom{\rule{0pt}{1.3em}}\raisebox{-.5ex}{\rule{0pt}{1em}\TextField[name=s5,width=20em,bordercolor=1 1 1]{}} & \raisebox{-.5ex}{\rule{0pt}{1em}\TextField[name=h5,width=5em,align=2,bordercolor=1 1 1]{}}~\texteuro\\
+%\hline
+%6 & \TextField[name=s6,width=20em]{} & \TextField[name=h6,width=5em,align=2]{}~\texteuro\\
+%\hline
+%7 & \TextField[name=s7,width=20em]{} & \TextField[name=h7,width=5em,align=2]{}~\texteuro\\
+%\hline
+%8 & \TextField[name=s8,width=20em]{} & \TextField[name=h8,width=5em,align=2]{}~\texteuro\\
+%\hline
+%9 & \TextField[name=s9,width=20em]{} & \TextField[name=h9,width=5em,align=2]{}~\texteuro\\
+%\hline
+%10 & \TextField[name=s10,width=20em]{} & \TextField[name=h10,width=5em,align=2]{} \texteuro\\
+\hline
+\hline
+\phantom{\rule{0pt}{1.3em}} & \hfill\raisebox{-.12ex}{\rule{0pt}{1ex}\PushButton[name=laske,height=9pt,onclick={totalSum()},bordercolor=1 1 1]{\textbf{\small Yhteensä}}} & \raisebox{-.5ex}{\rule{0pt}{1em}\TextField[name=total,width=5em,align=2,bordercolor=1 1 1]{}}~\texteuro\\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace*{1cm}
+\raisebox{11.1\baselineskip}{Lisätietoja:} \TextField[name=ekstradata,width=.7\textwidth,height=12\baselineskip,multiline=true,donotscroll=true,bordercolor=1 1 1]{}
+
+\vspace*{1cm}
+\hspace*{2cm}\textforlabel{paikka}{Otaniemessä}\TextField[name=idag,width=4.8em,borderstyle=U,readonly=true,height=1ex]{}\hspace*{.5cm} \rule[-3mm]{8cm}{.5pt}
+\end{Form}
+
+\vspace*{1cm}
+
+\framebox{\phantom{a}\\Hyv\"{a}ksytty pvm. \rule[-3mm]{3cm}{.5pt} Maksettu pvm. \rule[-2mm]{3cm}{.5pt} Tosite nro. \rule[-2mm]{2cm}{.5pt}\\\phantom{a}}
+
+\subsection*{Ohjeita}
+\begin{itemize}
+\item Niittaa numeroidut kuitit lomakkeen taakse vasempaan yl\"{a}kulmaan.
+\item T\"{a}yt\"{a} kaikki kohdat huolellisesti ja klikkaa ''Yhteensä''. Tulosta ja allekirjoita lomake.
+\item Toimita t\"{a}ytetty lomake rahastonhoitajalle tai hallituksen kokoukseen.
+\item Lomaketta ei tule kastella esim. porkkanamehulla.
+\end{itemize}
+
+\end{document}
