@@ -1,0 +1,1 @@
+Vuosijuhlan ohjelmalehtinen ja menu
