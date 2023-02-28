@@ -1,1 +1,1 @@
-Vuosijuhlan ohjelmalehtinen ja menu
+Vuosijuhlan ohjelmalehtinen ja menu, toimii myös pienenä lauluvihkona.
