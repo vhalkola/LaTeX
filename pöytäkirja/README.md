@@ -1,1 +1,1 @@
-Pöytäkirjapohja
+Pöytäkirjapohja yhdistyksen ja hallituksen kokoukseen
